@@ -17,17 +17,15 @@
   };
 
   $(function() {
-    var bgColor, foregroundColor, socket, updateBgColor;
+    var socket, updateBgColor;
     updateBgColor = function(bgColor) {
       var fgColor;
       $('body').css('background-color', bgColor);
       fgColor = getForegroundColor(bgColor);
+      $('.logo').hide();
+      $("#" + fgColor + "-logo").show();
       return $('#text').css('color', fgColor);
     };
-    bgColor = '#990099';
-    $('body').css('background-color', bgColor);
-    foregroundColor = getForegroundColor(bgColor);
-    $('#text').css('color', foregroundColor);
     socket = io();
     return socket.on('update-background', function(bgColor) {
       return updateBgColor(bgColor);

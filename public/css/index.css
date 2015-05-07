@@ -1,5 +1,20 @@
+body {
+	background-color: #0099CC
+}
+
+#text {
+	color: white;
+}
+
 .center {
 	margin: 20px auto 0 auto;
 	width: 90%;
 	text-align: center;
+}
+
+.logo {
+	width: 157 px;
+	height: 140 px;
+	margin: 100px auto 0 auto;
+	display: block;
 }

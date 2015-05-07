@@ -18,13 +18,13 @@ io.on('connection', (socket) ->
 	
 	socket.on('disconnect', ->
 		console.log('user disconnected')
-		index = clients.indexOf(clientIp)
-		clients.splice(index, 1) 
 	)
 	
 	socket.on('set-background', (hexColor) ->
 		io.to(clientIp).emit('update-background', hexColor)
+#		io.sockets.emit('update-background', hexColor)
 	)
+)
 
 http.listen(3000, ->
 	console.log('listening on *:3000') 

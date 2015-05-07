@@ -10,13 +10,10 @@ $ ->
 	updateBgColor = (bgColor) ->
 		$('body').css('background-color', bgColor)
 		fgColor = getForegroundColor(bgColor)
+		$('.logo').hide()
+		$("##{fgColor}-logo").show()
 		$('#text').css('color', fgColor)
-		
-	bgColor = '#990099'
-	$('body').css('background-color', bgColor)
-	foregroundColor = getForegroundColor(bgColor)
-	$('#text').css('color', foregroundColor)
-	
+
 	socket = io()
 	socket.on('update-background', (bgColor) ->
 		updateBgColor(bgColor)
