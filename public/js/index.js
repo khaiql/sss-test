@@ -27,9 +27,10 @@
       return $('#text').css('color', fgColor);
     };
     socket = io();
-    return socket.on('update-background', function(bgColor) {
+    socket.on('update-background', function(bgColor) {
       return updateBgColor(bgColor);
     });
+    return socket.emit('get-initial-background');
   });
 
 }).call(this);

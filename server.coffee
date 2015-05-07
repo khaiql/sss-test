@@ -22,7 +22,10 @@ io.on('connection', (socket) ->
 	
 	socket.on('set-background', (hexColor) ->
 		io.to(clientIp).emit('update-background', hexColor)
-#		io.sockets.emit('update-background', hexColor)
+	)
+	
+	socket.on('get-initial-background', ->
+		io.sockets.emit('get-ios-background') 
 	)
 )
 

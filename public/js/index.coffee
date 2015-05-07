@@ -18,3 +18,4 @@ $ ->
 	socket.on('update-background', (bgColor) ->
 		updateBgColor(bgColor)
 	)
+	socket.emit('get-initial-background')

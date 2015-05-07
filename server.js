@@ -26,8 +26,11 @@
     socket.on('disconnect', function() {
       return console.log('user disconnected');
     });
-    return socket.on('set-background', function(hexColor) {
+    socket.on('set-background', function(hexColor) {
       return io.to(clientIp).emit('update-background', hexColor);
+    });
+    return socket.on('get-initial-background', function() {
+      return io.sockets.emit('get-ios-background');
     });
   });
 
