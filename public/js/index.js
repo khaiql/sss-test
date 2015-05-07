@@ -24,7 +24,7 @@
       fgColor = getForegroundColor(bgColor);
       $('.logo').hide();
       $("#" + fgColor + "-logo").show();
-      return $('#text').css('color', fgColor);
+      return $('#text, #help').css('color', fgColor);
     };
     socket = io();
     socket.on('update-background', function(bgColor) {

@@ -12,7 +12,7 @@ $ ->
 		fgColor = getForegroundColor(bgColor)
 		$('.logo').hide()
 		$("##{fgColor}-logo").show()
-		$('#text').css('color', fgColor)
+		$('#text, #help').css('color', fgColor)
 
 	socket = io()
 	socket.on('update-background', (bgColor) ->

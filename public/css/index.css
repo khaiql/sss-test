@@ -12,6 +12,12 @@ body {
 	text-align: center;
 }
 
+
+#help {
+	width: 40%;
+	color: white;
+}
+
 .logo {
 	width: 157 px;
 	height: 140 px;
